@@ -72,6 +72,7 @@
             
         }
     </style>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -79,22 +80,22 @@
         <div class="item header">Crypto Currency Calculator v0.1</div>
         <div class="item coin-box btc ">
             <h2>Bitcoin</h2>
-            <h1>7800,21 USD</h1>
+            <h3>Loading data...</h3>
             <input type="text">
         </div>
         <div class="item coin-box ltc">
             <h2>Litecoin</h2>
-            <h3>111,21 USD</h1>
+            <h3>Loading data...</h1>
                 <input type="text">
         </div>
         <div class="item coin-box eth">
             <h2>Ethereum</h2>
-            <h1>231,21 USD</h1>
+            <h3>Loading data...</h3>
             <input type="text">
         </div>
         <div class="item coin-box bcc">
             <h2>Bitcoin Cash</h2>
-            <h1>360,21 USD</h1>
+            <h3>Loading data...</h3>
             <input type="text">
         </div>
         <div class="item result">
@@ -104,22 +105,7 @@
         <div class="item footer">Footer</div>
     </div>
 
-    <script>
-        const url = 'https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,PLN,EUR';
-
-        function getPrice(url) {
-            $.getJSON(url, function (data) {
-
-                var text = `Dolar: ${data.USD}<br>
-                            PLN: ${data.PLN}<br>
-                            Euro: ${data.EUR}`
-
-
-                $('.ltc>h3').html(text);
-            });
-        }
-        getPrice(url)
-    </script>
+    
 </body>
 
 </html>
