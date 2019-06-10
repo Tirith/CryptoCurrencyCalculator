@@ -6,26 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Raleway&display=swap" rel="stylesheet">
     <title>Document</title>
     <style>
         .item {
 
             margin: 5px;
             padding: 5px;
-            background-color: #d7d7d7;
+
+        }
+
+        h2 {
+            font-family: 'Raleway', sans-serif;
+            font-size: 25px;
         }
 
         .grid-container {
 
             display: grid;
-
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Nunito', sans-serif;
             width: 70%;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: 70px 250px 200px 50px;
             grid-template-areas:
                 "header header header header"
                 "btc ltc eth bcc"
-                "result result result result"
+                ". result result ."
                 "footer footer footer footer"
             ;
 
@@ -35,7 +43,7 @@
             grid-area: header;
         }
 
-        .coin-box{
+        .coin-box {
             border-radius: 8px;
             text-align: center;
         }
@@ -43,69 +51,239 @@
 
         .result {
             grid-area: result;
+            text-align: center;
+            background-color: #96bbda;
+            border-radius: 8px;
 
         }
 
         .btc {
             grid-area: btc;
-            
-            
+            background-color: #c0d0ef;
+
+
         }
 
         .ltc {
             grid-area: ltc;
-            
+            background-color: #c0d0ef;
+
         }
 
         .eth {
             grid-area: eth;
-            
+            background-color: #c0d0ef;
+
         }
 
         .bcc {
             grid-area: bcc;
-            
+            background-color: #c0d0ef;
+
         }
 
         .footer {
             grid-area: footer;
-            
+            color: #000000;
+
+
+        }
+
+        .footer a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #1f613a;
+        }
+
+        .label {
+            font-size: 20px;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .sum {
+            font-size: 30px;
+
+        }
+
+        .header {
+            font-size: 35px;
+            color: #000000;
+        }
+
+        b {
+            color: #f70000;
+        }
+
+        input {
+            display: inline-block;
+            -webkit-box-sizing: content-box;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+            padding: 5px;
+            border: 1px solid #b7b7b7;
+            -webkit-border-radius: 6px;
+            border-radius: 6px;
+            font: normal 20px/normal "Times New Roman", Times, serif;
+            color: rgba(255, 255, 255, 1);
+            -o-text-overflow: clip;
+            text-overflow: clip;
+            background: -webkit-linear-gradient(0deg, rgba(165, 206, 247, 0.5) 0, rgba(131, 157, 209, 1) 93%, rgba(131, 157, 209, 1) 100%);
+            background: -moz-linear-gradient(90deg, rgba(165, 206, 247, 0.5) 0, rgba(131, 157, 209, 1) 93%, rgba(131, 157, 209, 1) 100%);
+            background: linear-gradient(90deg, rgba(165, 206, 247, 0.5) 0, rgba(131, 157, 209, 1) 93%, rgba(131, 157, 209, 1) 100%);
+            background-position: 50% 50%;
+            -webkit-background-origin: padding-box;
+            background-origin: padding-box;
+            -webkit-background-clip: border-box;
+            background-clip: border-box;
+            -webkit-background-size: auto auto;
+            background-size: auto auto;
+            -webkit-transform: rotateX(-2.291831180523293deg);
+            transform: rotateX(-2.291831180523293deg);
         }
     </style>
-    <script src="script.js"></script>
+
 </head>
 
 <body>
     <div class="grid-container">
-        <div class="item header">Crypto Currency Calculator v0.1</div>
+        <div class="item header"><b>C</b>rypto <b>C</b>urrency <b>C</b>alculator</div>
         <div class="item coin-box btc ">
-            <h2>Bitcoin</h2>
+            <h2>Bitcoin <svg width="25px" height="25px" viewBox="0 0 201 200" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <title>BTC</title>
+                    <desc></desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Artboard" transform="translate(-422.000000, -1254.000000)">
+                            <g id="BTC" transform="translate(422.000000, 1253.000000)">
+                                <path
+                                    d="M200.1463,100.9964 C200.1463,156.2254 155.3753,200.9964 100.1463,200.9964 C44.9173,200.9964 0.1463,156.2254 0.1463,100.9964 C0.1463,45.7674 44.9173,0.9964 100.1463,0.9964 C155.3753,0.9964 200.1463,45.7674 200.1463,100.9964"
+                                    id="Fill-504" fill="#F7931A"></path>
+                                <path
+                                    d="M124.426,130.222 C123.589,133.035 121.706,135.353 119.124,136.749 C116.542,138.147 113.572,138.455 110.759,137.617 L82.598,129.23 L88.872,108.167 L117.031,116.555 L117.032,116.555 C122.838,118.284 126.156,124.415 124.426,130.222 M133.924,87.057 C135.32,89.639 135.628,92.609 134.791,95.423 C133.061,101.228 126.927,104.544 121.124,102.818 L121.123,102.818 L92.963,94.431 L99.235,73.368 L127.396,81.755 C130.209,82.593 132.527,84.475 133.924,87.057 M146.53,80.237 C143.311,74.288 137.968,69.948 131.487,68.018 L127.761,66.909 L132.977,49.395 L119.594,45.409 L114.378,62.923 L102.952,59.52 L108.169,42.006 L104.963,41.051 L91.975,37.183 L86.947,54.065 L71.119,49.351 L66.652,64.351 L82.48,69.066 L66.219,123.664 L50.391,118.95 L45.924,133.951 L61.751,138.664 L57.508,152.913 L60.713,153.868 L73.701,157.736 L78.133,142.855 L89.586,146.266 L85.154,161.148 L98.483,165.118 L102.915,150.236 L106.667,151.353 C109.059,152.065 111.502,152.418 113.93,152.418 C118.08,152.418 122.191,151.387 125.944,149.356 C131.893,146.137 136.232,140.795 138.163,134.312 C140.193,127.493 139.191,120.488 135.962,114.722 C141.824,111.663 146.495,106.336 148.527,99.514 C150.458,93.031 149.748,86.185 146.53,80.237"
+                                    id="Fill-505" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </h2>
+
             <h3>Loading data...</h3>
-            <input type="text">
+            <input class="btcInput" type="text" placeholder="Enter amount of coins">
         </div>
         <div class="item coin-box ltc">
-            <h2>Litecoin</h2>
+            <h2>Litecoin
+                <svg width="25px" height="25px" viewBox="0 0 201 201" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <title>LTC</title>
+                    <desc></desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Artboard" transform="translate(-767.000000, -1610.000000)">
+                            <g id="LTC" transform="translate(767.000000, 1610.000000)">
+                                <path
+                                    d="M100.0647,0.7772 C44.8357,0.7772 0.0647,45.5482 0.0647,100.7772 C0.0647,156.0062 44.8357,200.7772 100.0647,200.7772 C155.2937,200.7772 200.0647,156.0062 200.0647,100.7772 C200.0647,45.5482 155.2937,0.7772 100.0647,0.7772"
+                                    id="Fill-491" fill="#3D3E3C"></path>
+                                <path
+                                    d="M100.0647,9.1107 C150.6097,9.1107 191.7317,50.2327 191.7317,100.7777 C191.7317,151.3217 150.6097,192.4437 100.0647,192.4437 C49.5197,192.4437 8.3977,151.3217 8.3977,100.7777 C8.3977,50.2327 49.5197,9.1107 100.0647,9.1107"
+                                    id="Fill-492" fill="#FFFFFF"></path>
+                                <path
+                                    d="M163.0828,63.619 C160.8668,59.866 158.2668,56.28 155.3218,52.889 L52.1768,156.034 C55.5678,158.978 59.1538,161.579 62.9068,163.795 L163.0828,63.619 Z"
+                                    id="Fill-493" fill="#B6B7BA"></path>
+                                <path
+                                    d="M146.8382,44.5628 C143.3772,41.6758 139.7102,39.1648 135.8932,37.0178 L36.3052,136.6048 C38.4522,140.4228 40.9632,144.0888 43.8512,147.5498 L146.8382,44.5628 Z"
+                                    id="Fill-494" fill="#B6B7BA"></path>
+                                <path
+                                    d="M124.3343,31.7654 C119.4593,30.0554 114.4383,28.8924 109.3623,28.2464 L27.5343,110.0754 C28.1813,115.1494 29.3423,120.1714 31.0533,125.0464 L124.3343,31.7654 Z"
+                                    id="Fill-495" fill="#B6B7BA"></path>
+                                <path
+                                    d="M92.7957,28.0032 C76.5687,29.6142 60.7777,36.6292 48.3477,49.0592 C35.9177,61.4892 28.9017,77.2812 27.2907,93.5082 L92.7957,28.0032 Z"
+                                    id="Fill-496" fill="#B6B7BA"></path>
+                                <path
+                                    d="M172.3469,89.6566 C171.5849,84.6786 170.2999,79.7686 168.5089,75.0036 L74.2909,169.2206 C79.0559,171.0116 83.9659,172.2976 88.9439,173.0586 L172.3469,89.6566 Z"
+                                    id="Fill-497" fill="#B6B7BA"></path>
+                                <path
+                                    d="M173.0125,105.8006 L105.0885,173.7246 C122.0975,172.5606 138.7805,165.4976 151.7825,152.4946 C164.7855,139.4916 171.8485,122.8106 173.0125,105.8006"
+                                    id="Fill-498" fill="#B6B7BA"></path>
+                                <polygon id="Fill-499" fill="#F8F9F7"
+                                    points="91.9568 126.346 96.2398 95.56 123.2748 76.102 123.2748 57.435 99.1268 74.81 104.0778 39.223 74.5318 39.223 68.1928 97.067 49.3798 110.603 49.3798 129.285 65.9708 117.345 62.4108 149.831 91.9568 149.831 159.0828 149.831 159.0828 126.346">
+                                </polygon>
+                                <path
+                                    d="M64.9197,147.5823 L156.8347,147.5823 L156.8347,128.5943 L89.3727,128.5943 L94.1457,94.2973 L121.0277,74.9503 L121.0277,61.8233 L96.1757,79.7033 L101.4947,41.4713 L76.5487,41.4713 L70.3197,98.3073 L51.6287,111.7563 L51.6287,124.8963 L68.7567,112.5693 L64.9197,147.5823 Z M161.3307,152.0793 L59.9027,152.0793 L63.1867,122.1203 L47.1317,133.6733 L47.1317,109.4513 L66.0667,95.8273 L72.5167,36.9743 L106.6617,36.9743 L102.0757,69.9173 L125.5237,53.0483 L125.5237,77.2533 L98.3327,96.8223 L94.5407,124.0983 L161.3307,124.0983 L161.3307,152.0793 Z"
+                                    id="Fill-500" fill="#3D3E3C"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </h2>
             <h3>Loading data...</h1>
-                <input type="text">
+                <input class="ltcInput" type="text" placeholder="Enter amount of coins">
         </div>
         <div class="item coin-box eth">
-            <h2>Ethereum</h2>
+            <h2>Ethereum
+                <svg width="25px" height="25px" viewBox="0 0 201 200" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                    <title>ETH</title>
+                    <desc></desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Artboard" transform="translate(-766.000000, -1254.000000)">
+                            <g id="ETH" transform="translate(766.000000, 1253.000000)">
+                                <path
+                                    d="M200.9128,100.9964 C200.9128,156.2254 156.1418,200.9964 100.9128,200.9964 C45.6848,200.9964 0.9128,156.2254 0.9128,100.9964 C0.9128,45.7674 45.6848,0.9964 100.9128,0.9964 C156.1418,0.9964 200.9128,45.7674 200.9128,100.9964"
+                                    id="Fill-506" fill="#497391"></path>
+                                <polygon id="Fill-507" fill="#FFFFFF"
+                                    points="56.6355 113.387 99.5275 25.034 99.5275 135.965"></polygon>
+                                <polygon id="Fill-508" fill="#FFFFFF"
+                                    points="145.1917 113.387 102.1477 135.965 102.1477 25.004"></polygon>
+                                <polygon id="Fill-509" fill="#FFFFFF"
+                                    points="56.6355 116.619 99.5275 138.095 99.5275 172.629"></polygon>
+                                <polygon id="Fill-510" fill="#FFFFFF"
+                                    points="145.1917 116.619 102.1477 172.629 102.1477 138.095"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </h2>
             <h3>Loading data...</h3>
-            <input type="text">
+            <input class="ethInput" type="text" placeholder="Enter amount of coins">
         </div>
         <div class="item coin-box bcc">
-            <h2>Bitcoin Cash</h2>
+            <h2>Bitcoin Cash
+                <svg width="25px" height="25px" viewBox="0 0 201 200" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+                    <title>BCH</title>
+                    <desc>Created with Sketch.</desc>
+                    <defs></defs>
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Artboard" transform="translate(-1111.000000, -1254.000000)">
+                            <g id="BCH" transform="translate(1111.000000, 1253.000000)">
+                                <path
+                                    d="M200.6799,100.9964 C200.6799,156.2254 155.9089,200.9964 100.6799,200.9964 C45.4509,200.9964 0.6799,156.2254 0.6799,100.9964 C0.6799,45.7674 45.4509,0.9964 100.6799,0.9964 C155.9089,0.9964 200.6799,45.7674 200.6799,100.9964"
+                                    id="Fill-511" fill="#8AC072"></path>
+                                <path
+                                    d="M137.6731,103.493 C139.0271,106.097 139.2871,109.072 138.4021,111.871 C137.5191,114.671 135.6001,116.958 132.9941,118.312 L106.9271,131.87 L96.7871,112.373 L122.8541,98.815 L122.8541,98.815 C128.2291,96.02 134.8771,98.118 137.6731,103.493 M114.4771,65.871 C117.2761,66.755 119.5641,68.676 120.9181,71.28 C123.7131,76.654 121.6121,83.303 116.2421,86.099 C116.2411,86.099 116.2401,86.099 116.2401,86.099 L90.1731,99.657 L80.0311,80.16 L106.1001,66.601 C108.7031,65.248 111.6781,64.988 114.4771,65.871 M118.7931,52.204 C112.3421,50.168 105.4851,50.765 99.4851,53.886 L96.0371,55.68 L87.6051,39.468 L75.2151,45.911 L83.6481,62.123 L73.0721,67.624 L64.6391,51.411 L61.6721,52.955 L49.6491,59.208 L57.7771,74.836 L43.1261,82.456 L50.3481,96.342 L65.0001,88.722 L91.2871,139.262 L76.6351,146.882 L83.8581,160.768 L98.5091,153.148 L105.3691,166.338 L108.3371,164.795 L120.3591,158.541 L113.1941,144.766 L123.7961,139.252 L130.9611,153.028 L143.3001,146.61 L136.1351,132.834 L139.6081,131.028 C141.8221,129.876 143.8231,128.431 145.5681,126.743 C148.5491,123.856 150.7861,120.256 152.0701,116.186 C154.1071,109.736 153.5091,102.88 150.3881,96.879 C147.1051,90.567 141.5121,86.23 135.1821,84.333 C137.2671,78.058 136.9191,70.982 133.6341,64.666 C130.5131,58.665 125.2411,54.24 118.7931,52.204"
+                                    id="Fill-512" fill="#FFFFFF"></path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+            </h2>
             <h3>Loading data...</h3>
-            <input type="text">
+            <input class="bccInput" type="text" placeholder="Enter amount of coins">
         </div>
         <div class="item result">
 
 
         </div>
-        <div class="item footer">Footer</div>
+        <div class="item footer"><a href="https://tomekboruc.pl"><b>T</b>omasz <b>B</b>oruc</a></div>
     </div>
 
-    
+    <script src="script.js"></script>
 </body>
 
 </html>
