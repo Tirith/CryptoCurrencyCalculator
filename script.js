@@ -6,43 +6,68 @@ const urlBcc = 'https://min-api.cryptocompare.com/data/price?fsym=BCC&tsyms=USD,
 
 
 var btcPrice, ltcPrice, ethPrice, bccPrice;
-var btcPriceUSD, ltcPriceUSD, ethPriceUSD, bccPriceUSD;
+var btcPriceUSD = 0, ltcPriceUSD, ethPriceUSD, bccPriceUSD;
 var btcPriceEUR, ltcPriceEUR, ethPriceEUR, bccPriceEUR;
 
 function getPrice(url, selector) {
     $.getJSON(url, function (data) {
+
+        var text = `Dolar: ${data.USD.toFixed(2)}<br>
+                            PLN: ${data.PLN.toFixed(2)}<br>
+                            Euro: ${data.EUR.toFixed(2)}`
         if (selector == '.btc>h3') {
+
+            if (btcPriceUSD != data.USD) {
+                
+                $(selector).html(text).fadeOut("fast").fadeIn( "slow" );
+            }
             btcPrice = data.PLN
             btcPriceUSD = data.USD
             btcPriceEUR = data.EUR
+           
+            
         }
 
         if (selector == '.ltc>h3') {
+            if (ltcPriceUSD != data.USD) {
+                
+                $(selector).html(text).fadeOut("fast").fadeIn( "slow" );
+            }
             ltcPrice = data.PLN
             ltcPriceUSD = data.USD
             ltcPriceEUR = data.EUR
         }
         if (selector == '.eth>h3') {
+            if (ethPriceUSD != data.USD) {
+                
+                $(selector).html(text).fadeOut("fast").fadeIn( "slow" );
+            }
             ethPrice = data.PLN
             ethPriceUSD = data.USD
             ethPriceEUR = data.EUR
         }
 
         if (selector == '.bcc>h3') {
+            if (bccPriceUSD != data.USD) {
+                
+                $(selector).html(text).fadeOut("fast").fadeIn( "slow" );
+            }
             bccPrice = data.PLN
             bccPriceUSD = data.USD
             bccPriceEUR = data.EUR
         }
 
-        var text = `Dolar: ${data.USD.toFixed(2)}<br>
-                            PLN: ${data.PLN.toFixed(2)}<br>
-                            Euro: ${data.EUR.toFixed(2)}`
+        
 
 
-        $(selector).html(text);
+                            
+                            
+        
         sumPrice();
     });
 }
+
+
 
 function sumPrice() {
     let btcInputValue = $('.btcInput').val()

@@ -13,13 +13,16 @@
 
             margin: 5px;
             padding: 5px;
+            min-width: 190px;
 
         }
 
         h2 {
             font-family: 'Raleway', sans-serif;
             font-size: 25px;
+            
         }
+        
 
         .grid-container {
 
@@ -29,7 +32,7 @@
             font-family: 'Nunito', sans-serif;
             width: 70%;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 70px 250px 200px 50px;
+            grid-template-rows: 70px 1fr 200px 50px;
             grid-template-areas:
                 "header header header header"
                 "btc ltc eth bcc"
@@ -52,33 +55,33 @@
         .result {
             grid-area: result;
             text-align: center;
-            background-color: #96bbda;
+            background-color: #24c43d;
             border-radius: 8px;
 
         }
 
         .btc {
             grid-area: btc;
-            background-color: #c0d0ef;
+            background-color: #1fb1cb;
 
 
         }
 
         .ltc {
             grid-area: ltc;
-            background-color: #c0d0ef;
+            background-color: #1fb1cb;
 
         }
 
         .eth {
             grid-area: eth;
-            background-color: #c0d0ef;
+            background-color: #1fb1cb;
 
         }
 
         .bcc {
             grid-area: bcc;
-            background-color: #c0d0ef;
+            background-color: #1fb1cb;
 
         }
 
@@ -116,6 +119,7 @@
 
         input {
             display: inline-block;
+            width: 80%;
             -webkit-box-sizing: content-box;
             -moz-box-sizing: content-box;
             box-sizing: content-box;
@@ -123,13 +127,11 @@
             border: 1px solid #b7b7b7;
             -webkit-border-radius: 6px;
             border-radius: 6px;
-            font: normal 20px/normal "Times New Roman", Times, serif;
+            font: normal 15px/normal "Times New Roman", Times, serif;
             color: rgb(0, 0, 0);
             -o-text-overflow: clip;
             text-overflow: clip;
-            background: -webkit-linear-gradient(0deg, rgba(165, 206, 247, 0.5) 0, rgba(131, 157, 209, 1) 93%, rgba(131, 157, 209, 1) 100%);
-            background: -moz-linear-gradient(90deg, rgba(165, 206, 247, 0.5) 0, rgba(131, 157, 209, 1) 93%, rgba(131, 157, 209, 1) 100%);
-            background: linear-gradient(90deg, rgba(165, 206, 247, 0.5) 0, rgba(131, 157, 209, 1) 93%, rgba(131, 157, 209, 1) 100%);
+            margin-bottom: 5px;
             background-position: 50% 50%;
             -webkit-background-origin: padding-box;
             background-origin: padding-box;
