@@ -20,9 +20,9 @@
         h2 {
             font-family: 'Raleway', sans-serif;
             font-size: 25px;
-            
+
         }
-        
+
 
         .grid-container {
 
@@ -55,8 +55,20 @@
         .result {
             grid-area: result;
             text-align: center;
-            background-color: #24c43d;
             border-radius: 8px;
+            margin-top: 15px;
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#bfd255+0,8eb92a+50,72aa00+51,9ecb2d+100;Green+Gloss */
+            background: rgb(191, 210, 85);
+            /* Old browsers */
+            background: -moz-linear-gradient(-45deg, rgba(191, 210, 85, 1) 0%, rgba(142, 185, 42, 1) 50%, rgba(114, 170, 0, 1) 51%, rgba(158, 203, 45, 1) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(191, 210, 85, 1) 0%, rgba(142, 185, 42, 1) 50%, rgba(114, 170, 0, 1) 51%, rgba(158, 203, 45, 1) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(191, 210, 85, 1) 0%, rgba(142, 185, 42, 1) 50%, rgba(114, 170, 0, 1) 51%, rgba(158, 203, 45, 1) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#bfd255', endColorstr='#9ecb2d', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
+
 
         }
 
@@ -64,6 +76,22 @@
             grid-area: btc;
             background-color: #1fb1cb;
 
+
+
+        }
+
+        .gradient {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+            background: rgb(30, 87, 153);
+            /* Old browsers */
+            background: -moz-linear-gradient(-45deg, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg, rgba(30, 87, 153, 1) 0%, rgba(41, 137, 216, 1) 50%, rgba(32, 124, 202, 1) 51%, rgba(125, 185, 232, 1) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e5799', endColorstr='#7db9e8', GradientType=1);
+            /* IE6-9 fallback on horizontal gradient */
 
         }
 
@@ -111,10 +139,17 @@
         .header {
             font-size: 35px;
             color: #000000;
+
         }
 
         b {
             color: #f70000;
+        }
+
+        .error {
+            font-size: 40px;
+            color: red;
+            font-family: 'Raleway', sans-serif;
         }
 
         input {
@@ -127,7 +162,7 @@
             border: 1px solid #b7b7b7;
             -webkit-border-radius: 6px;
             border-radius: 6px;
-            font: normal 15px/normal "Times New Roman", Times, serif;
+            font: normal 15px/normal "Raleway", Times, serif;
             color: rgb(0, 0, 0);
             -o-text-overflow: clip;
             text-overflow: clip;
@@ -149,7 +184,7 @@
 <body>
     <div class="grid-container">
         <div class="item header"><b>C</b>rypto <b>C</b>urrency <b>C</b>alculator</div>
-        <div class="item coin-box btc ">
+        <div class="item coin-box btc gradient ">
             <h2>Bitcoin <svg width="25px" height="25px" viewBox="0 0 201 200" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -174,7 +209,7 @@
             <h3>Loading data...</h3>
             <input class="btcInput" type="text" placeholder="Enter amount of coins">
         </div>
-        <div class="item coin-box ltc">
+        <div class="item coin-box ltc gradient">
             <h2>Litecoin
                 <svg width="25px" height="25px" viewBox="0 0 201 201" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -223,7 +258,7 @@
             <h3>Loading data...</h1>
                 <input class="ltcInput" type="text" placeholder="Enter amount of coins">
         </div>
-        <div class="item coin-box eth">
+        <div class="item coin-box eth gradient">
             <h2>Ethereum
                 <svg width="25px" height="25px" viewBox="0 0 201 200" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -253,7 +288,7 @@
             <h3>Loading data...</h3>
             <input class="ethInput" type="text" placeholder="Enter amount of coins">
         </div>
-        <div class="item coin-box bcc">
+        <div class="item coin-box bcc gradient">
             <h2>Bitcoin Cash
                 <svg width="25px" height="25px" viewBox="0 0 201 200" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink">

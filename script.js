@@ -1,12 +1,13 @@
 const urlLtc = 'https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,PLN,EUR';
 const urlBtc = 'https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD,PLN,EUR';
 const urlEth = 'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,PLN,EUR';
-const urlBcc = 'https://min-api.cryptocompare.com/data/price?fsym=BCC&tsyms=USD,PLN,EUR';
+const urlBcc = 'https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD,PLN,EUR';
 
 
 
 var btcPrice, ltcPrice, ethPrice, bccPrice;
-var btcPriceUSD = 0, ltcPriceUSD, ethPriceUSD, bccPriceUSD;
+var btcPriceUSD = 0,
+    ltcPriceUSD, ethPriceUSD, bccPriceUSD;
 var btcPriceEUR, ltcPriceEUR, ethPriceEUR, bccPriceEUR;
 
 function getPrice(url, selector) {
@@ -18,20 +19,20 @@ function getPrice(url, selector) {
         if (selector == '.btc>h3') {
 
             if (btcPriceUSD != data.USD) {
-                
-                $(selector).html(text).fadeOut("fast").fadeIn( "slow" );
+
+                $(selector).html(text).fadeOut("fast").fadeIn("slow");
             }
             btcPrice = data.PLN
             btcPriceUSD = data.USD
             btcPriceEUR = data.EUR
-           
-            
+
+
         }
 
         if (selector == '.ltc>h3') {
             if (ltcPriceUSD != data.USD) {
-                
-                $(selector).html(text).fadeOut("fast").fadeIn( "slow" );
+
+                $(selector).html(text).fadeOut("fast").fadeIn("slow");
             }
             ltcPrice = data.PLN
             ltcPriceUSD = data.USD
@@ -39,8 +40,8 @@ function getPrice(url, selector) {
         }
         if (selector == '.eth>h3') {
             if (ethPriceUSD != data.USD) {
-                
-                $(selector).html(text).fadeOut("fast").fadeIn( "slow" );
+
+                $(selector).html(text).fadeOut("fast").fadeIn("slow");
             }
             ethPrice = data.PLN
             ethPriceUSD = data.USD
@@ -49,20 +50,20 @@ function getPrice(url, selector) {
 
         if (selector == '.bcc>h3') {
             if (bccPriceUSD != data.USD) {
-                
-                $(selector).html(text).fadeOut("fast").fadeIn( "slow" );
+
+                $(selector).html(text).fadeOut("fast").fadeIn("slow");
             }
             bccPrice = data.PLN
             bccPriceUSD = data.USD
             bccPriceEUR = data.EUR
         }
 
-        
 
 
-                            
-                            
-        
+
+
+
+
         sumPrice();
     });
 }
@@ -84,7 +85,7 @@ function sumPrice() {
     if (!isNaN(sumPLN)) {
         $('.result').html(`<div class="label">You have coins worth</div><br><span class="sum"> ${sumPLN.toFixed(2)} PLN</span><br><span class="sum"> ${sumUSD.toFixed(2)} USD</span><br><span class="sum"> ${sumEUR.toFixed(2)} EUR</span>`);
     } else {
-        $('.result').html(`Enter correct value`);
+        $('.result').html(`<div class="error">Enter correct value</div>`);
     }
 
 }
