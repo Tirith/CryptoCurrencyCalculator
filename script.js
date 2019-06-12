@@ -4,7 +4,7 @@ const urlEth = 'https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,
 const urlBcc = 'https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD,PLN,EUR';
 
 
-
+var index = 1;
 var btcPrice, ltcPrice, ethPrice, bccPrice;
 var btcPriceUSD = 0,
     ltcPriceUSD, ethPriceUSD, bccPriceUSD;
@@ -16,11 +16,26 @@ function getPrice(url, selector) {
         var text = `Dolar: ${data.USD.toFixed(2)}<br>
                             PLN: ${data.PLN.toFixed(2)}<br>
                             Euro: ${data.EUR.toFixed(2)}`
+
+        if (index <= 4) {
+            showPrice();
+            index++;
+
+        }
         if (selector == '.btc>h3') {
 
-            if (btcPriceUSD != data.USD) {
+            if (btcPriceUSD != data.USD && btcPriceUSD < data.USD) {
+                let gain;
+                gain = data.USD - btcPriceUSD;
+                showPriceUp(gain);
 
-                $(selector).html(text).fadeOut("fast").fadeIn("slow");
+
+            }
+
+            if (btcPriceUSD != data.USD && btcPriceUSD > data.USD) {
+                let fall;
+                fall = btcPriceUSD - data.USD;
+                showPriceDown(fall);
             }
             btcPrice = data.PLN
             btcPriceUSD = data.USD
@@ -30,18 +45,34 @@ function getPrice(url, selector) {
         }
 
         if (selector == '.ltc>h3') {
-            if (ltcPriceUSD != data.USD) {
-
-                $(selector).html(text).fadeOut("fast").fadeIn("slow");
+            if (ltcPriceUSD != data.USD && ltcPriceUSD < data.USD) {
+                let gain;
+                gain = data.USD - ltcPriceUSD;
+                showPriceUp(gain);
             }
+
+            if (ltcPriceUSD != data.USD && ltcPriceUSD > data.USD) {
+                let fall;
+                fall = ltcPriceUSD - data.USD;
+                showPriceDown(fall);
+            }
+
+
             ltcPrice = data.PLN
             ltcPriceUSD = data.USD
             ltcPriceEUR = data.EUR
         }
         if (selector == '.eth>h3') {
-            if (ethPriceUSD != data.USD) {
+            if (ethPriceUSD != data.USD && ethPriceUSD < data.USD) {
+                let gain;
+                gain = data.USD - ethPriceUSD;
+                showPriceUp(gain);
+            }
 
-                $(selector).html(text).fadeOut("fast").fadeIn("slow");
+            if (ethPriceUSD != data.USD && ethPriceUSD > data.USD) {
+                let fall;
+                fall = ethPriceUSD - data.USD;
+                showPriceDown(fall);
             }
             ethPrice = data.PLN
             ethPriceUSD = data.USD
@@ -49,20 +80,36 @@ function getPrice(url, selector) {
         }
 
         if (selector == '.bcc>h3') {
-            if (bccPriceUSD != data.USD) {
+            if (bccPriceUSD != data.USD && bccPriceUSD < data.USD) {
+                let gain;
+                gain = data.USD - bccPriceUSD;
+                showPriceUp(gain);
+            }
 
-                $(selector).html(text).fadeOut("fast").fadeIn("slow");
+            if (bccPriceUSD != data.USD && bccPriceUSD > data.USD) {
+                let fall;
+                fall = bccPriceUSD - data.USD;
+                showPriceDown(fall);
             }
             bccPrice = data.PLN
             bccPriceUSD = data.USD
             bccPriceEUR = data.EUR
         }
 
+        function showPriceUp(gain) {
 
+            $(selector).html(text + "<br><span class='up'>&uarr; " + gain.toFixed(2) + " USD</span>").stop(true, true).fadeOut("fast").fadeIn("slow");
+        }
 
+        function showPriceDown(fall) {
 
+            $(selector).html(text + "<br><span class='down'>&darr; " + fall.toFixed(2) + " USD</span>").stop(true, true).fadeOut("fast").fadeIn("slow");
+        }
 
+        function showPrice() {
 
+            $(selector).html(text + "<br><span class=''>!</span>").stop(true, true).fadeOut("fast").fadeIn("slow");
+        }
 
         sumPrice();
     });
