@@ -27,7 +27,10 @@ function getPrice(url, selector) {
             if (btcPriceUSD != data.USD && btcPriceUSD < data.USD) {
                 let gain;
                 gain = data.USD - btcPriceUSD;
-                showPriceUp(gain);
+                if (btcPriceUSD != 0) {
+                    showPriceUp(gain);
+                }
+
 
 
             }
@@ -108,7 +111,7 @@ function getPrice(url, selector) {
 
         function showPrice() {
 
-            $(selector).html(text + "<br><span class=''>!</span>").stop(true, true).fadeOut("fast").fadeIn("slow");
+            $(selector).html(text + "<br><span class=''>-</span>").stop(true, true).fadeOut("fast").fadeIn("slow");
         }
 
         sumPrice();

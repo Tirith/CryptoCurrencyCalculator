@@ -2,6 +2,19 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142179158-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-142179158-1');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -49,15 +62,17 @@
             font-family: 'Nunito', sans-serif;
             width: 70%;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 70px 1fr 200px 50px;
+            grid-template-rows: 70px 1fr 200px 100px;
             grid-template-areas:
                 "header header header header"
                 "btc ltc eth bcc"
                 ". result result ."
-                "footer footer footer footer"
+                "footer footer donate donate"
             ;
-
+            position: relative;
         }
+
+
 
         .header {
             grid-area: header;
@@ -134,6 +149,9 @@
         .footer {
             grid-area: footer;
             color: #000000;
+            position: absolute;
+            bottom: 0;
+            left: 0;
 
 
         }
@@ -180,7 +198,7 @@
             border: 1px solid #b7b7b7;
             -webkit-border-radius: 6px;
             border-radius: 6px;
-            font: normal 15px/normal "Raleway", Times, serif;
+            font-family: 'Quicksand', sans-serif;
             color: rgb(0, 0, 0);
             -o-text-overflow: clip;
             text-overflow: clip;
@@ -202,6 +220,23 @@
 
         .up {
             color: #84ce7b;
+        }
+
+        div.donate b {
+            font-weight: bold;
+            color: #1f613a;
+
+        }
+
+        .donate {
+            grid-area: donate;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: #1f613a;
+
+            font-family: 'Nunito', sans-serif;
+            font-size: 13px;
         }
     </style>
 
@@ -343,7 +378,15 @@
 
 
         </div>
-        <div class="item footer"><a href="https://tomekboruc.pl"><b>T</b>omasz <b>B</b>oruc</a></div>
+        <div class="item footer"><a href="https://tomekboruc.pl"><b>T</b>omasz <b>B</b>oruc</a><br>
+
+        </div>
+
+        <div class="item donate">
+            <b>DONATE</b><br>
+            <b>LTC:</b> LdwYGcHgheH98MUZ8mkwya4ZfKMrNiwoq3<br>
+            <b>BTC:</b> 1P7caUEr3mQdby99fcjUdimzwyep2Fft6W
+        </div>
     </div>
 
     <script src="script.js"></script>
