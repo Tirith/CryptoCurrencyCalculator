@@ -17,16 +17,28 @@ $(document).ready(function () {
     var btcPriceEUR, ltcPriceEUR, ethPriceEUR, bccPriceEUR, etcPriceEUR, xrpPriceEUR, eosPriceEUR, zecPriceEUR;
 
     function getPrice(url, selector) {
-        $.getJSON(url, function (data) {
+        $.getJSON(url, function (data, status) {
 
-            var text = `Dolar: ${data.USD.toFixed(3)}<br>
+
+            var text;
+            if (status == "success") {
+                text = `Dolar: ${data.USD.toFixed(3)}<br>
                             PLN: ${data.PLN.toFixed(3)}<br>
                             Euro: ${data.EUR.toFixed(3)}`
 
-            if (index <= 4) {
+            } else {
+                text = "Error";
+            }
+
+            if (index <= 8) { //amount of crypto
                 showPrice();
                 index++;
             }
+
+
+
+
+
             if (selector == '.btc>h3') {
 
                 if (btcPriceUSD != data.USD && btcPriceUSD < data.USD) {
@@ -62,6 +74,8 @@ $(document).ready(function () {
                 zecPriceUSD = data.USD
                 zecPriceEUR = data.EUR
             }
+
+
 
             if (selector == '.eos>h3') {
 
@@ -167,6 +181,8 @@ $(document).ready(function () {
                 bccPriceUSD = data.USD
                 bccPriceEUR = data.EUR
             }
+
+
 
             function showPriceUp(gain) {
                 $(selector).html(text + "<br><span class='up'>&uarr; " + gain.toFixed(3) + " USD</span>").stop(true, true).fadeOut("fast").fadeIn("slow");
