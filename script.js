@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     var index = 1;
     var btcPrice, ltcPrice, ethPrice, bccPrice, etcPrice, xrpPrice, eosPrice, zecPrice;
-    var btcPriceUSD = 0,
+    var btcPriceUSD,
         ltcPriceUSD, ethPriceUSD, bccPriceUSD, etcPriceUSD, xrpPriceUSD, eosPriceUSD, zecPriceUSD;
     var btcPriceEUR, ltcPriceEUR, ethPriceEUR, bccPriceEUR, etcPriceEUR, xrpPriceEUR, eosPriceEUR, zecPriceEUR;
 
