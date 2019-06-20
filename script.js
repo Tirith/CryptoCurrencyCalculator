@@ -23,8 +23,8 @@ $(document).ready(function () {
             var text;
             if (status == "success") {
                 text = `Dolar: ${data.USD.toFixed(3)}<br>
-                            PLN: ${data.PLN.toFixed(3)}<br>
-                            Euro: ${data.EUR.toFixed(3)}`
+                        PLN: ${data.PLN.toFixed(3)}<br>
+                        Euro: ${data.EUR.toFixed(3)}`
 
             } else {
                 text = "Error";
@@ -229,15 +229,31 @@ $(document).ready(function () {
 
     });
 
-    setInterval(function () {
-        getPrice(urlLtc, '.ltc>h3');
-        getPrice(urlBtc, '.btc>h3');
-        getPrice(urlEth, '.eth>h3');
-        getPrice(urlBcc, '.bcc>h3');
-        getPrice(urlEtc, '.etc>h3');
-        getPrice(urlXrp, '.xrp>h3');
-        getPrice(urlEos, '.eos>h3');
-        getPrice(urlZec, '.zec>h3');
-    }, 2000);
+
+
+    $('.update-list').on('change', function () {
+        interval = this.value;
+        clearInterval(intervalId);
+        startInterval(interval);
+
+    });
+    interval = 1000;
+    startInterval(interval);
+
+    function startInterval(interval) {
+        // Store the id of the interval so we can clear it later
+        intervalId = setInterval(function () {
+            getPrice(urlLtc, '.ltc>h3');
+            getPrice(urlBtc, '.btc>h3');
+            getPrice(urlEth, '.eth>h3');
+            getPrice(urlBcc, '.bcc>h3');
+            getPrice(urlEtc, '.etc>h3');
+            getPrice(urlXrp, '.xrp>h3');
+            getPrice(urlEos, '.eos>h3');
+            getPrice(urlZec, '.zec>h3');
+        }, interval);
+    }
+
+
 
 });
