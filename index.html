@@ -21,11 +21,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Quicksand|Nunito|Raleway&display=swap" rel="stylesheet">
-    <title>CruptoCurrencyCalculator</title>
+    <title>CryptoCurrencyCalculator</title>
     <style>
+        :root{
+            --bg:#202020;
+            --dark:#202020;
+            --light:#c8c8c8;
+            --calm:#216776;
+        }
+
 
         body{
-            background-color: #123450;
+            background-color: var(--bg);
         }
         .item {
 
@@ -39,6 +46,50 @@
             font-family: 'Raleway', sans-serif;
             font-size: 25px;
 
+        }
+
+        .change-background{
+            
+           
+            padding:5px;
+            border-radius: 5px;
+
+        }
+
+       
+
+        button:focus {
+            outline:0;
+            }
+
+
+        .change-background>button{
+            width:50px;
+            height:25px; 
+            border:0;
+            border-radius: 8px;
+            margin-top:6px;
+            cursor: pointer;
+            transition-duration: 0.7s;
+            
+        }
+
+        .change-background>button.calm{
+           background-color: var(--calm);
+        }
+
+        .change-background>button.dark{
+           background-color: var(--dark);
+        }
+
+        .change-background>button.light{
+           background-color: var(--light);
+        }
+
+        button:hover{
+            
+            transform: scale(1.1);
+           
         }
 
 
@@ -69,7 +120,7 @@
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: 70px 1fr 1fr 200px 100px;
             grid-template-areas:
-                "header header header header"
+                "header header header color"
                 "btc ltc eth bcc"
                 "etc xrp eos zec"
                 ". result result ."
@@ -88,6 +139,12 @@
         .coin-box {
             border-radius: 8px;
             text-align: center;
+        }
+
+        .color{
+            grid-area: color;
+            position: relative;
+  text-align: right;
         }
 
 
@@ -358,8 +415,19 @@
                         <option value="5000">5</option>
                         <option value="10000">10</option>
                     </select></div> second
+
+                   
             </span>
+
+            
         </div>
+
+        <div class="change-background color"> 
+                <button  class='dark'  value='dark'></button>
+                <button  class='light' value='light'></button>
+                <button  class='calm' value='calm'></button>
+            </div>
+
         <div class="item coin-box btc gradient ">
             <h2>Bitcoin <svg width="25px" height="25px" viewBox="0 0 201 200" version="1.1"
                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -626,6 +694,8 @@
             <b>BTC:</b> 1P7caUEr3mQdby99fcjUdimzwyep2Fft6W
         </div>
     </div>
+
+    
 
     <script src="script.js"></script>
 </body>

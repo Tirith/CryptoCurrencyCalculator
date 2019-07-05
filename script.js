@@ -257,3 +257,30 @@ $(document).ready(function () {
 
 
 });
+
+
+//change background
+
+const root = document.documentElement;
+const themeBtns = document.querySelectorAll(" button");
+
+themeBtns.forEach(btn => {
+  btn.addEventListener("click", handleThemeUpdate);
+});
+
+function handleThemeUpdate(e) {
+  switch (e.target.value) {
+    case "dark":
+      root.style.setProperty("--bg", "var(--dark)");
+      
+      break;
+    case "calm":
+      root.style.setProperty("--bg", "var(--calm)");
+      
+      break;
+    case "light":
+      root.style.setProperty("--bg", "var(--light)");
+      
+      break;
+  }
+}
